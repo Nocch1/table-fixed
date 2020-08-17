@@ -1,0 +1,2989 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/base/ureport/res/ureport-asserts/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <title>mysql:nissinstat-ureport</title>
+    <style type="text/css" id="_ureport_table_style">
+        ._A1 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B1 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C1 {
+            width: 154pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C2 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D2 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._A3 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B3 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C3 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D3 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B4 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C4 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D4 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B5 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C5 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D5 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B6 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C6 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D6 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B7 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C7 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D7 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B8 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C8 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D8 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B9 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C9 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D9 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B10 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C10 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D10 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B11 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C11 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D11 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B12 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C12 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D12 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B13 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C13 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D13 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._A14 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B14 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C14 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D14 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B15 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C15 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D15 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B16 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C16 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D16 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B17 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C17 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D17 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B18 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C18 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D18 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B19 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C19 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D19 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B20 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C20 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D20 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B21 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C21 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D21 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B22 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C22 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D22 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B23 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C23 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D23 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B24 {
+            width: 105pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C24 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D24 {
+            width: 77pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/base/ureport/res/ureport-asserts/venderjs/jquery.min.js"></script>
+    <script type="text/javascript" src="/base/ureport/res/ureport-asserts/venderjs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/base/ureport/res/ureport-asserts/venderjs/Chart.bundle.min.js"></script>
+    <style type="text/css">/* Chart.js */
+    @-webkit-keyframes chartjs-render-animation {
+        from {
+            opacity: 0.99
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes chartjs-render-animation {
+        from {
+            opacity: 0.99
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    .chartjs-render-monitor {
+        -webkit-animation: chartjs-render-animation 0.001s;
+        animation: chartjs-render-animation 0.001s;
+    }</style>
+    <script type="text/javascript"
+            src="/base/ureport/res/ureport-asserts/venderjs/chartjs-plugin-datalabels.min.js"></script>
+    <script type="text/javascript"
+            src="/base/ureport/res/ureport-asserts/venderjs/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/base/ureport/res/ureport-asserts/js/preview.bundle.js"></script>
+    <style type="text/css">/*!
+ * Datetimepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+    .datetimepicker {
+        padding: 4px;
+        margin-top: 1px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        direction: ltr;
+    }
+
+    .datetimepicker-inline {
+        width: 220px;
+    }
+
+    .datetimepicker.datetimepicker-rtl {
+        direction: rtl;
+    }
+
+    .datetimepicker.datetimepicker-rtl table tr td span {
+        float: right;
+    }
+
+    .datetimepicker-dropdown, .datetimepicker-dropdown-left {
+        top: 0;
+        left: 0;
+    }
+
+    [class*=" datetimepicker-dropdown"]:before {
+        content: '';
+        display: inline-block;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #cccccc;
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+    }
+
+    [class*=" datetimepicker-dropdown"]:after {
+        content: '';
+        display: inline-block;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #ffffff;
+        position: absolute;
+    }
+
+    [class*=" datetimepicker-dropdown-top"]:before {
+        content: '';
+        display: inline-block;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #cccccc;
+        border-top-color: rgba(0, 0, 0, 0.2);
+        border-bottom: 0;
+    }
+
+    [class*=" datetimepicker-dropdown-top"]:after {
+        content: '';
+        display: inline-block;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #ffffff;
+        border-bottom: 0;
+    }
+
+    .datetimepicker-dropdown-bottom-left:before {
+        top: -7px;
+        right: 6px;
+    }
+
+    .datetimepicker-dropdown-bottom-left:after {
+        top: -6px;
+        right: 7px;
+    }
+
+    .datetimepicker-dropdown-bottom-right:before {
+        top: -7px;
+        left: 6px;
+    }
+
+    .datetimepicker-dropdown-bottom-right:after {
+        top: -6px;
+        left: 7px;
+    }
+
+    .datetimepicker-dropdown-top-left:before {
+        bottom: -7px;
+        right: 6px;
+    }
+
+    .datetimepicker-dropdown-top-left:after {
+        bottom: -6px;
+        right: 7px;
+    }
+
+    .datetimepicker-dropdown-top-right:before {
+        bottom: -7px;
+        left: 6px;
+    }
+
+    .datetimepicker-dropdown-top-right:after {
+        bottom: -6px;
+        left: 7px;
+    }
+
+    .datetimepicker > div {
+        display: none;
+    }
+
+    .datetimepicker.minutes div.datetimepicker-minutes {
+        display: block;
+    }
+
+    .datetimepicker.hours div.datetimepicker-hours {
+        display: block;
+    }
+
+    .datetimepicker.days div.datetimepicker-days {
+        display: block;
+    }
+
+    .datetimepicker.months div.datetimepicker-months {
+        display: block;
+    }
+
+    .datetimepicker.years div.datetimepicker-years {
+        display: block;
+    }
+
+    .datetimepicker table {
+        margin: 0;
+    }
+
+    .datetimepicker td,
+    .datetimepicker th {
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: none;
+    }
+
+    .table-striped .datetimepicker table tr td,
+    .table-striped .datetimepicker table tr th {
+        background-color: transparent;
+    }
+
+    .datetimepicker table tr td.minute:hover {
+        background: #eeeeee;
+        cursor: pointer;
+    }
+
+    .datetimepicker table tr td.hour:hover {
+        background: #eeeeee;
+        cursor: pointer;
+    }
+
+    .datetimepicker table tr td.day:hover {
+        background: #eeeeee;
+        cursor: pointer;
+    }
+
+    .datetimepicker table tr td.old,
+    .datetimepicker table tr td.new {
+        color: #999999;
+    }
+
+    .datetimepicker table tr td.disabled,
+    .datetimepicker table tr td.disabled:hover {
+        background: none;
+        color: #999999;
+        cursor: default;
+    }
+
+    .datetimepicker table tr td.today,
+    .datetimepicker table tr td.today:hover,
+    .datetimepicker table tr td.today.disabled,
+    .datetimepicker table tr td.today.disabled:hover {
+        background-color: #fde19a;
+        background-image: -moz-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: -ms-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdd49a), to(#fdf59a));
+        background-image: -webkit-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: -o-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: linear-gradient(to bottom, #fdd49a, #fdf59a);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdd49a', endColorstr='#fdf59a', GradientType=0);
+        border-color: #fdf59a #fdf59a #fbed50;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    }
+
+    .datetimepicker table tr td.today:hover,
+    .datetimepicker table tr td.today:hover:hover,
+    .datetimepicker table tr td.today.disabled:hover,
+    .datetimepicker table tr td.today.disabled:hover:hover,
+    .datetimepicker table tr td.today:active,
+    .datetimepicker table tr td.today:hover:active,
+    .datetimepicker table tr td.today.disabled:active,
+    .datetimepicker table tr td.today.disabled:hover:active,
+    .datetimepicker table tr td.today.active,
+    .datetimepicker table tr td.today:hover.active,
+    .datetimepicker table tr td.today.disabled.active,
+    .datetimepicker table tr td.today.disabled:hover.active,
+    .datetimepicker table tr td.today.disabled,
+    .datetimepicker table tr td.today:hover.disabled,
+    .datetimepicker table tr td.today.disabled.disabled,
+    .datetimepicker table tr td.today.disabled:hover.disabled,
+    .datetimepicker table tr td.today[disabled],
+    .datetimepicker table tr td.today:hover[disabled],
+    .datetimepicker table tr td.today.disabled[disabled],
+    .datetimepicker table tr td.today.disabled:hover[disabled] {
+        background-color: #fdf59a;
+    }
+
+    .datetimepicker table tr td.today:active,
+    .datetimepicker table tr td.today:hover:active,
+    .datetimepicker table tr td.today.disabled:active,
+    .datetimepicker table tr td.today.disabled:hover:active,
+    .datetimepicker table tr td.today.active,
+    .datetimepicker table tr td.today:hover.active,
+    .datetimepicker table tr td.today.disabled.active,
+    .datetimepicker table tr td.today.disabled:hover.active {
+        background-color: #fbf069;
+    }
+
+    .datetimepicker table tr td.active,
+    .datetimepicker table tr td.active:hover,
+    .datetimepicker table tr td.active.disabled,
+    .datetimepicker table tr td.active.disabled:hover {
+        background-color: #006dcc;
+        background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -ms-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+        background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+        background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+        border-color: #0044cc #0044cc #002a80;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .datetimepicker table tr td.active:hover,
+    .datetimepicker table tr td.active:hover:hover,
+    .datetimepicker table tr td.active.disabled:hover,
+    .datetimepicker table tr td.active.disabled:hover:hover,
+    .datetimepicker table tr td.active:active,
+    .datetimepicker table tr td.active:hover:active,
+    .datetimepicker table tr td.active.disabled:active,
+    .datetimepicker table tr td.active.disabled:hover:active,
+    .datetimepicker table tr td.active.active,
+    .datetimepicker table tr td.active:hover.active,
+    .datetimepicker table tr td.active.disabled.active,
+    .datetimepicker table tr td.active.disabled:hover.active,
+    .datetimepicker table tr td.active.disabled,
+    .datetimepicker table tr td.active:hover.disabled,
+    .datetimepicker table tr td.active.disabled.disabled,
+    .datetimepicker table tr td.active.disabled:hover.disabled,
+    .datetimepicker table tr td.active[disabled],
+    .datetimepicker table tr td.active:hover[disabled],
+    .datetimepicker table tr td.active.disabled[disabled],
+    .datetimepicker table tr td.active.disabled:hover[disabled] {
+        background-color: #0044cc;
+    }
+
+    .datetimepicker table tr td.active:active,
+    .datetimepicker table tr td.active:hover:active,
+    .datetimepicker table tr td.active.disabled:active,
+    .datetimepicker table tr td.active.disabled:hover:active,
+    .datetimepicker table tr td.active.active,
+    .datetimepicker table tr td.active:hover.active,
+    .datetimepicker table tr td.active.disabled.active,
+    .datetimepicker table tr td.active.disabled:hover.active {
+        background-color: #003399;
+    }
+
+    .datetimepicker table tr td span {
+        display: block;
+        width: 23%;
+        height: 54px;
+        line-height: 54px;
+        float: left;
+        margin: 1%;
+        cursor: pointer;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .datetimepicker .datetimepicker-hours span {
+        height: 26px;
+        line-height: 26px;
+    }
+
+    .datetimepicker .datetimepicker-hours table tr td span.hour_am,
+    .datetimepicker .datetimepicker-hours table tr td span.hour_pm {
+        width: 14.6%;
+    }
+
+    .datetimepicker .datetimepicker-hours fieldset legend,
+    .datetimepicker .datetimepicker-minutes fieldset legend {
+        margin-bottom: inherit;
+        line-height: 30px;
+    }
+
+    .datetimepicker .datetimepicker-minutes span {
+        height: 26px;
+        line-height: 26px;
+    }
+
+    .datetimepicker table tr td span:hover {
+        background: #eeeeee;
+    }
+
+    .datetimepicker table tr td span.disabled,
+    .datetimepicker table tr td span.disabled:hover {
+        background: none;
+        color: #999999;
+        cursor: default;
+    }
+
+    .datetimepicker table tr td span.active,
+    .datetimepicker table tr td span.active:hover,
+    .datetimepicker table tr td span.active.disabled,
+    .datetimepicker table tr td span.active.disabled:hover {
+        background-color: #006dcc;
+        background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -ms-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+        background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+        background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+        border-color: #0044cc #0044cc #002a80;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .datetimepicker table tr td span.active:hover,
+    .datetimepicker table tr td span.active:hover:hover,
+    .datetimepicker table tr td span.active.disabled:hover,
+    .datetimepicker table tr td span.active.disabled:hover:hover,
+    .datetimepicker table tr td span.active:active,
+    .datetimepicker table tr td span.active:hover:active,
+    .datetimepicker table tr td span.active.disabled:active,
+    .datetimepicker table tr td span.active.disabled:hover:active,
+    .datetimepicker table tr td span.active.active,
+    .datetimepicker table tr td span.active:hover.active,
+    .datetimepicker table tr td span.active.disabled.active,
+    .datetimepicker table tr td span.active.disabled:hover.active,
+    .datetimepicker table tr td span.active.disabled,
+    .datetimepicker table tr td span.active:hover.disabled,
+    .datetimepicker table tr td span.active.disabled.disabled,
+    .datetimepicker table tr td span.active.disabled:hover.disabled,
+    .datetimepicker table tr td span.active[disabled],
+    .datetimepicker table tr td span.active:hover[disabled],
+    .datetimepicker table tr td span.active.disabled[disabled],
+    .datetimepicker table tr td span.active.disabled:hover[disabled] {
+        background-color: #0044cc;
+    }
+
+    .datetimepicker table tr td span.active:active,
+    .datetimepicker table tr td span.active:hover:active,
+    .datetimepicker table tr td span.active.disabled:active,
+    .datetimepicker table tr td span.active.disabled:hover:active,
+    .datetimepicker table tr td span.active.active,
+    .datetimepicker table tr td span.active:hover.active,
+    .datetimepicker table tr td span.active.disabled.active,
+    .datetimepicker table tr td span.active.disabled:hover.active {
+        background-color: #003399;
+    }
+
+    .datetimepicker table tr td span.old {
+        color: #999999;
+    }
+
+    .datetimepicker th.switch {
+        width: 145px;
+    }
+
+    .datetimepicker th span.glyphicon {
+        pointer-events: none;
+    }
+
+    .datetimepicker thead tr:first-child th,
+    .datetimepicker tfoot th {
+        cursor: pointer;
+    }
+
+    .datetimepicker thead tr:first-child th:hover,
+    .datetimepicker tfoot th:hover {
+        background: #eeeeee;
+    }
+
+    .input-append.date .add-on i,
+    .input-prepend.date .add-on i,
+    .input-group.date .input-group-addon span {
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+    }
+    </style>
+</head>
+<body style="margin:5px">
+<form style="margin-top:10px;margin-bottom:10px">
+    <div class="row" style="margin:0">
+        <div class="col-md-2" style="padding-left:2px;padding-right:2px"></div>
+        <div class="col-md-8" style="padding-left:2px;padding-right:2px"></div>
+        <div class="col-md-2" style="padding-left:2px;padding-right:2px"></div>
+    </div>
+</form>
+<div style="border:solid 1px #ddd;border-radius:5px;height:35px;width:100%;margin-bottom:5px;background:#f8f8f8">
+    <!--    <div style="text-align:left">-->
+    <!--        <button type="button" class="btn btn-default ureport-export-excel" style="display:inline-block;padding:0;background:#f8f8f8;border:none;margin:3px" title="导出EXCEL">-->
+    <!--            <img src="/base/ureport/res/ureport-asserts/icons/excel.svg" width="20px" height="20px">-->
+    <!--        </button>-->
+    <!--        <button type="button" class="btn btn-default ureport-export-excel-paging" style="display:inline-block;padding:0;background:#f8f8f8;border:none;margin:3px" title="分页导出EXCEL">-->
+    <!--            <img src="/base/ureport/res/ureport-asserts/icons/excel-paging.svg" width="20px" height="20px">-->
+    <!--        </button>-->
+    <!--        <button type="button" class="btn btn-default ureport-export-excel-paging-sheet" style="display:inline-block;padding:0;background:#f8f8f8;border:none;margin:3px" title="分页分Sheet导出EXCEL">-->
+    <!--            <img src="/base/ureport/res/ureport-asserts/icons/excel-with-paging-sheet.svg" width="20px" height="20px">-->
+    <!--        </button>-->
+    <!--        <div class="btn-group">-->
+    <!--            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="background:#f8f8f8;border:none;color:#337ab7">-->
+    <!--                预览-->
+    <!--                <span class="caret"></span>-->
+    <!--            </button>-->
+    <!--            <ul class="dropdown-menu" role="menu">-->
+    <!--                <li><a href="/base/ureport/preview?_u=mysql:nissinstat.ureport.xml&amp;_t=6,7,8,9&amp;_n=日清报表&amp;startTimeAlias=2020-8-1 00:00:00&amp;endTimeAlias=2020-8-31 23:59:59&amp;userId=1&amp;companyId=1&amp;ptype=跟单&amp;currentUserDepartmentId=83,89" style="color:#337ab7">预览</a></li>-->
+    <!--                <li><a href="/base/ureport/preview?_u=mysql:nissinstat.ureport.xml&amp;_i=1&amp;_t=6,7,8,9&amp;_n=日清报表&amp;startTimeAlias=2020-8-1 00:00:00&amp;endTimeAlias=2020-8-31 23:59:59&amp;userId=1&amp;companyId=1&amp;ptype=跟单&amp;currentUserDepartmentId=83,89" style="color:#337ab7">分页预览</a></li>-->
+    <!--            </ul>-->
+    <!--        </div>-->
+    <!--    </div>-->
+</div>
+<div id="_ureport_table" style="float:left">
+    <table border="0" style="margin:auto;border-collapse:collapse;width:1257pt">
+        <tbody>
+        <tr style="height:19pt">
+            <td class="_A1" rowspan="2">跟单</td>
+            <td class="_B1" rowspan="2">&nbsp;</td>
+            <td class="_C1" colspan="2">&nbsp;</td>
+            <td class="_C1" colspan="2">缬氨酸</td>
+            <td class="_C1" colspan="2">苏氨酸</td>
+            <td class="_C1" colspan="2">谷氨酸</td>
+            <td class="_C1" colspan="2">谷氨酸钠</td>
+            <td class="_C1" colspan="2">赖氨酸盐酸盐</td>
+            <td class="_C1" colspan="2">赖氨酸硫酸盐</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_C2">数量(单位:吨)</td>
+            <td class="_D2">数量差额</td>
+            <td class="_C2">数量(单位:吨)</td>
+            <td class="_D2">数量差额</td>
+            <td class="_C2">数量(单位:吨)</td>
+            <td class="_D2">数量差额</td>
+            <td class="_C2">数量(单位:吨)</td>
+            <td class="_D2">数量差额</td>
+            <td class="_C2">数量(单位:吨)</td>
+            <td class="_D2">数量差额</td>
+            <td class="_C2">数量(单位:吨)</td>
+            <td class="_D2">数量差额</td>
+            <td class="_C2">数量(单位:吨)</td>
+            <td class="_D2">数量差额</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_A3" rowspan="11">杨凤梅</td>
+            <td class="_B3">订单数量</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">120.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">1695.2000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">1754.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B4">无需排产数量</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">86.0000</td>
+            <td class="_D4">34.0000</td>
+            <td class="_C4">222.4000</td>
+            <td class="_D4">1472.8000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">200.0000</td>
+            <td class="_D4">1554.0000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B5">已排产数量</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">34.0000</td>
+            <td class="_C5">1396.0000</td>
+            <td class="_D5">76.8000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">1554.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">已入库数量</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">970.0000</td>
+            <td class="_D6">426.0000</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">1554.0000</td>
+            <td class="_D6">0.0000</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">已订舱数量</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">105.0000</td>
+            <td class="_D7">15.0000</td>
+            <td class="_C7">1443.2000</td>
+            <td class="_D7">252.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">1754.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B8">已放单数量</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">54.0000</td>
+            <td class="_D8">51.0000</td>
+            <td class="_C8">1443.2000</td>
+            <td class="_D8">0.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">1700.0000</td>
+            <td class="_D8">54.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B9">预计发货数量</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">15.0000</td>
+            <td class="_D9">71.0000</td>
+            <td class="_C9">746.4000</td>
+            <td class="_D9">446.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">1400.0000</td>
+            <td class="_D9">354.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B10">实际发货数量</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">15.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">746.4000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">1400.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B11">实际收货数量</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">15.0000</td>
+            <td class="_D11">0.0000</td>
+            <td class="_C11">746.4000</td>
+            <td class="_D11">0.0000</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">0.0000</td>
+            <td class="_D11">1400.0000</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B12">已装箱数量</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">15.0000</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">746.4000</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B13">已开船数量</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">120.0000</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">1695.2000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">1754.0000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_A3" rowspan="11">田清</td>
+            <td class="_B3">订单数量</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">70.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B4">无需排产数量</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">70.0000</td>
+            <td class="_D4">0.0000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B5">已排产数量</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">已入库数量</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">已订舱数量</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">70.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B8">已放单数量</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">70.0000</td>
+            <td class="_D8">0.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B9">预计发货数量</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">70.0000</td>
+            <td class="_D9">0.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B10">实际发货数量</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">70.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B11">实际收货数量</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">35.0000</td>
+            <td class="_D11">35.0000</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B12">已装箱数量</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">35.0000</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B13">已开船数量</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">70.0000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_A3" rowspan="11">李佩桐</td>
+            <td class="_B3">订单数量</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">17.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">96.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">410.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">211.0000</td>
+            <td class="_D3">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B4">无需排产数量</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">17.0000</td>
+            <td class="_D4">0.0000</td>
+            <td class="_C4">81.0000</td>
+            <td class="_D4">15.0000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">410.0000</td>
+            <td class="_D4">0.0000</td>
+            <td class="_C4">211.0000</td>
+            <td class="_D4">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B5">已排产数量</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">15.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">已入库数量</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">15.0000</td>
+            <td class="_D6">0.0000</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">已订舱数量</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">17.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">96.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">410.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">211.0000</td>
+            <td class="_D7">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B8">已放单数量</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">17.0000</td>
+            <td class="_D8">0.0000</td>
+            <td class="_C8">96.0000</td>
+            <td class="_D8">0.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">322.5000</td>
+            <td class="_D8">87.5000</td>
+            <td class="_C8">211.0000</td>
+            <td class="_D8">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B9">预计发货数量</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">17.0000</td>
+            <td class="_D9">0.0000</td>
+            <td class="_C9">15.0000</td>
+            <td class="_D9">81.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">179.5000</td>
+            <td class="_D9">230.5000</td>
+            <td class="_C9">27.0000</td>
+            <td class="_D9">184.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B10">实际发货数量</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">17.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">15.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">179.5000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">27.0000</td>
+            <td class="_D10">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B11">实际收货数量</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">0.0000</td>
+            <td class="_D11">17.0000</td>
+            <td class="_C11">15.0000</td>
+            <td class="_D11">0.0000</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">152.5000</td>
+            <td class="_D11">27.0000</td>
+            <td class="_C11">0.0000</td>
+            <td class="_D11">27.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B12">已装箱数量</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">15.0000</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">152.5000</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B13">已开船数量</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">17.0000</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">96.0000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">410.0000</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">211.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_A3" rowspan="11">魏玮</td>
+            <td class="_B3">订单数量</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">80.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">168.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">170.0000</td>
+            <td class="_D3">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B4">无需排产数量</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">80.0000</td>
+            <td class="_D4">0.0000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">70.0000</td>
+            <td class="_D4">98.0000</td>
+            <td class="_C4">170.0000</td>
+            <td class="_D4">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B5">已排产数量</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">98.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">已入库数量</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">98.0000</td>
+            <td class="_D6">0.0000</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">已订舱数量</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">80.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">168.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">170.0000</td>
+            <td class="_D7">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B8">已放单数量</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">40.0000</td>
+            <td class="_D8">40.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">115.5000</td>
+            <td class="_D8">52.5000</td>
+            <td class="_C8">170.0000</td>
+            <td class="_D8">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B9">预计发货数量</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">0.0000</td>
+            <td class="_D9">80.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">0.0000</td>
+            <td class="_D9">168.0000</td>
+            <td class="_C9">170.0000</td>
+            <td class="_D9">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B10">实际发货数量</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">0.0000</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">0.0000</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">170.0000</td>
+            <td class="_D10">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B11">实际收货数量</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">0.0000</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">0.0000</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">33.0000</td>
+            <td class="_D11">137.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B12">已装箱数量</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">33.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B13">已开船数量</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">80.0000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">168.0000</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">170.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_A3" rowspan="11">张伊</td>
+            <td class="_B3">订单数量</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">184.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B4">无需排产数量</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">23.0000</td>
+            <td class="_D4">161.0000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B5">已排产数量</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">23.0000</td>
+            <td class="_D5">138.0000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">已入库数量</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">23.0000</td>
+            <td class="_D6">0.0000</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">已订舱数量</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">184.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B8">已放单数量</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">184.0000</td>
+            <td class="_D8">0.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B9">预计发货数量</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">69.0000</td>
+            <td class="_D9">-23.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B10">实际发货数量</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">69.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B11">实际收货数量</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">69.0000</td>
+            <td class="_D11">0.0000</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B12">已装箱数量</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">69.0000</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B13">已开船数量</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">184.0000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_A3" rowspan="11">白茂荣</td>
+            <td class="_B3">订单数量</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">1500.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">273.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B4">无需排产数量</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">1500.0000</td>
+            <td class="_D4">0.0000</td>
+            <td class="_C4">230.0000</td>
+            <td class="_D4">43.0000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B5">已排产数量</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">43.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">已入库数量</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">43.0000</td>
+            <td class="_D6">0.0000</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">已订舱数量</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">1500.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">273.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B8">已放单数量</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">1000.0000</td>
+            <td class="_D8">500.0000</td>
+            <td class="_C8">273.0000</td>
+            <td class="_D8">0.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B9">预计发货数量</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">214.0000</td>
+            <td class="_D9">1286.0000</td>
+            <td class="_C9">115.0000</td>
+            <td class="_D9">158.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B10">实际发货数量</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">214.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">115.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B11">实际收货数量</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">101.0000</td>
+            <td class="_D11">113.0000</td>
+            <td class="_C11">115.0000</td>
+            <td class="_D11">0.0000</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B12">已装箱数量</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">101.0000</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">115.0000</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B13">已开船数量</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">1500.0000</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">273.0000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_A3" rowspan="11">王利</td>
+            <td class="_B3">订单数量</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">27.0000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">1834.2000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">&nbsp;</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">1152.8000</td>
+            <td class="_D3">&nbsp;</td>
+            <td class="_C3">128.4000</td>
+            <td class="_D3">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B4">无需排产数量</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">0.0000</td>
+            <td class="_D4">27.0000</td>
+            <td class="_C4">0.0000</td>
+            <td class="_D4">1834.2000</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">&nbsp;</td>
+            <td class="_D4">&nbsp;</td>
+            <td class="_C4">162.0000</td>
+            <td class="_D4">990.8000</td>
+            <td class="_C4">128.4000</td>
+            <td class="_D4">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B5">已排产数量</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">27.0000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">1625.2000</td>
+            <td class="_D5">209.0000</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">&nbsp;</td>
+            <td class="_D5">&nbsp;</td>
+            <td class="_C5">990.8000</td>
+            <td class="_D5">0.0000</td>
+            <td class="_C5">0.0000</td>
+            <td class="_D5">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">已入库数量</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">27.0000</td>
+            <td class="_D6">0.0000</td>
+            <td class="_C6">1500.2000</td>
+            <td class="_D6">125.0000</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">&nbsp;</td>
+            <td class="_D6">&nbsp;</td>
+            <td class="_C6">990.8000</td>
+            <td class="_D6">0.0000</td>
+            <td class="_C6">0.0000</td>
+            <td class="_D6">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">已订舱数量</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">27.0000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">1674.2000</td>
+            <td class="_D7">160.0000</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">&nbsp;</td>
+            <td class="_D7">&nbsp;</td>
+            <td class="_C7">1152.8000</td>
+            <td class="_D7">0.0000</td>
+            <td class="_C7">128.4000</td>
+            <td class="_D7">0.0000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B8">已放单数量</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">27.0000</td>
+            <td class="_D8">0.0000</td>
+            <td class="_C8">718.2000</td>
+            <td class="_D8">956.0000</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">&nbsp;</td>
+            <td class="_D8">&nbsp;</td>
+            <td class="_C8">656.0000</td>
+            <td class="_D8">496.8000</td>
+            <td class="_C8">74.0000</td>
+            <td class="_D8">54.4000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B9">预计发货数量</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">0.0000</td>
+            <td class="_D9">27.0000</td>
+            <td class="_C9">544.2000</td>
+            <td class="_D9">956.0000</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">&nbsp;</td>
+            <td class="_D9">&nbsp;</td>
+            <td class="_C9">203.0000</td>
+            <td class="_D9">949.8000</td>
+            <td class="_C9">0.0000</td>
+            <td class="_D9">128.4000</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B10">实际发货数量</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">0.0000</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">544.2000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">&nbsp;</td>
+            <td class="_D10">&nbsp;</td>
+            <td class="_C10">203.0000</td>
+            <td class="_D10">0.0000</td>
+            <td class="_C10">0.0000</td>
+            <td class="_D10">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B11">实际收货数量</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">0.0000</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">375.2000</td>
+            <td class="_D11">169.0000</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">&nbsp;</td>
+            <td class="_D11">&nbsp;</td>
+            <td class="_C11">155.0000</td>
+            <td class="_D11">48.0000</td>
+            <td class="_C11">0.0000</td>
+            <td class="_D11">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B12">已装箱数量</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">375.2000</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">&nbsp;</td>
+            <td class="_D12">&nbsp;</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">155.0000</td>
+            <td class="_C12">0.0000</td>
+            <td class="_D12">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B13">已开船数量</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">27.0000</td>
+            <td class="_C13">276.0000</td>
+            <td class="_D13">1558.2000</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">&nbsp;</td>
+            <td class="_D13">&nbsp;</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">1152.8000</td>
+            <td class="_C13">0.0000</td>
+            <td class="_D13">128.4000</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<iframe name="_print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+<iframe name="_print_pdf_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+<script type="text/javascript">
+function onIframeLoad() {
+    let iframeDoc = document;
+    let head = iframeDoc.getElementsByTagName('head')[0];
+    let body = iframeDoc.getElementsByTagName('body')[0];
+    let styleElement = iframeDoc.createElement('style');
+    styleElement.appendChild(iframeDoc.createTextNode(`
+                ::-webkit-scrollbar {
+                    display: none;
+                }
+                #_ureport_table {
+                    position: relative;
+                    top: 55px;
+                }
+                #fixedDiv {
+                    position: fixed;
+                    top: 57px;
+                    left: 5px;
+                    overflow: hidden;
+                    z-index: 100;
+                    background-color: #ffffff;
+                }
+                #fixedTable {
+                    margin: auto;
+                    border-collapse: collapse;
+                    table-layout : fixed;
+                }
+                #topDiv {
+                    position: absolute;
+                    top: -50px;
+                    left: 0;
+                    overflow: hidden;
+                    z-index: 10;
+                }
+                #topTable {
+                    margin: auto;
+                    border-collapse: collapse;
+                    table-layout : fixed;
+                }
+                #leftDiv {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 700px;
+                    overflow: hidden;
+                    overflow-x: hidden;
+                    z-index: 1;
+                }
+                #leftTable {
+                    margin: auto;
+                    border-collapse: collapse;
+                    table-layout : fixed;
+                }
+                #mainDiv {
+                    height: 700px;
+                    overflow: auto;
+                    overflow-x: hidden;
+                    z-index: -10;
+                }
+                #fixedBlock {
+                    position: fixed;
+                    top: 57px;
+                    left: 0;
+                    z-index: 99;
+                    background: #ffffff;
+                }
+                #topBlock {
+                    position: fixed;
+                    height: 117px;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 2;
+                    background: #ffffff;
+                }
+                #leftBlock {
+                    position: fixed;
+                    height: 100%;
+                    width: 244px;
+                    top: 105px;
+                    left: 0;
+                    z-index: 0;
+                    background: #ffffff;
+                }
+                #toolbar {
+                    position: relative;
+                    z-index: 100;
+                }
+            `));
+    head.appendChild(styleElement);
+
+    let warpDivEle = iframeDoc.getElementById('_ureport_table');
+    $('body > div:first').attr('id', 'toolbar');
+
+    let topBlock = iframeDoc.createElement('div');
+    topBlock.id = 'topBlock';
+    body.appendChild(topBlock);
+    let leftBlock = iframeDoc.createElement('div');
+    leftBlock.id = 'leftBlock';
+    body.appendChild(leftBlock);
+    let fixedBlock = iframeDoc.createElement('div');
+    fixedBlock.id = 'fixedBlock';
+    body.appendChild(fixedBlock);
+
+    let mainTable = warpDivEle.getElementsByTagName('table')[0];
+
+    let headTrELe = mainTable.getElementsByTagName('tr')[0].outerHTML + mainTable.getElementsByTagName('tr')[1].outerHTML;
+
+    let fixedELe = '';
+    let leftTrELe = '';
+    $('#_ureport_table table:eq(0) tr').each(function (index, element) {
+        if (index < 2) {
+            fixedELe += $(element).prop('outerHTML');
+            $(element).css('display', 'none');
+        } else {
+            leftTrELe += $(element).prop("outerHTML");
+        }
+    });
+
+    warpDivEle.innerHTML = '<div id="fixedDiv"><table id="fixedTable" border="0">' + fixedELe + '</table></div><div id="leftDiv"><table id="leftTable" border="0">' + leftTrELe + '</table></div><div id="topDiv"><table id="topTable" border="0">' + headTrELe + '</table></div><div id="mainDiv">' + mainTable.outerHTML + '</div>';
+
+    $('#leftTable td').filter(function () {
+        if ((/\_[C-Z]/).test($(this).attr('class'))) {
+            $(this).remove();
+        }
+    });
+    $('#fixedTable td').filter(function () {
+        if ((/\_[C-Z]/).test($(this).attr('class'))) {
+            $(this).remove();
+        }
+    });
+
+    let trs = $('#topTable tr');
+
+    for (let j = 2; j < trs.length; j++) {
+        $('#topTable tr:eq(' + j + ')').css('display', 'none');
+    }
+
+    for (let i = 0; i < $('#mainDiv tr:eq(2)').children().length; i++) {
+        let width = $('#mainDiv tr:eq(2) td:eq(' + i + ')').width() + 2;
+        if (i < 2) {
+            $('#fixedTable tr:first td:eq(' + i + ')').css('width', width - 1 + 'px');
+            $('#topTable tr:first td:eq(' + i + ')').css('width', width + 'px');
+            if (i === 0) {
+                $('#leftTable td').each(function (leftIndex, leftElement) {
+                    if ((/_A/).test($(leftElement).attr('class'))) {
+                        $(leftElement).css('width', width + 'px')
+                    }
+                });
+            } else if (i === 1) {
+                $('#leftTable td').each(function (leftIndex, leftElement) {
+                    if ((/_B/).test($(leftElement).attr('class'))) {
+                        $(leftElement).css('width', width + 'px')
+                    }
+           n     });
+            }
+        } else {
+            $('#topTable tr:eq(1) td:eq(' + (i - 2) + ')').css('width', width + 'px');
+        }
+    }
+
+    $('#leftDiv').css('left', $(document).scrollLeft()).height($(window).height() - 110);
+    $('#mainDiv').height($(window).height() - 110);
+    $('#fixedBlock').width($('#fixedDiv').width() + 5).height($('#fixedDiv').height());
+
+    $(document).scroll(function (e) {
+        $('#leftDiv').css('left',$(this).scrollLeft());
+    });
+
+    $('#mainDiv').scroll(function (e) {
+        $('#leftDiv').height($(window).height() - 110 + $(this).scrollTop());
+        $('#leftDiv').css('top', -$(this).scrollTop());
+    });
+}
+
+$(document).ready(function () {
+    onIframeLoad();
+});
+</script>
+</body>
+</html>

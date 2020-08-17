@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="/base/ureport/res/ureport-asserts/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <title>mysql:votesstat-ureport</title>
+    <style type="text/css" id="_ureport_table_style">
+        ._A1 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B1 {
+            width: 113pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C1 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D1 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._E1 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._F1 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._G1 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._H1 {
+            width: 109pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._I1 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._J1 {
+            width: 98pt;
+            text-align: center;
+            vertical-align: middle;
+            background-color: rgb(240, 173, 78);
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._A2 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B2 {
+            width: 113pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C2 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D2 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._E2 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._F2 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._G2 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._H2 {
+            width: 109pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._I2 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._J2 {
+            width: 98pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B3 {
+            width: 113pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C3 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D3 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._E3 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._F3 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._G3 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._H3 {
+            width: 109pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._I3 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._J3 {
+            width: 98pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B4 {
+            width: 113pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C4 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D4 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._E4 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._F4 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._G4 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._H4 {
+            width: 109pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._I4 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._J4 {
+            width: 98pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 10pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._A5 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B5 {
+            width: 113pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C5 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D5 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+        }
+
+        ._E5 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._F5 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._G5 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._H5 {
+            width: 109pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._I5 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._J5 {
+            width: 98pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B6 {
+            width: 113pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C6 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D6 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._E6 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._F6 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._G6 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._H6 {
+            width: 109pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._I6 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._J6 {
+            width: 98pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._B7 {
+            width: 113pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._C7 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._D7 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._E7 {
+            width: 80pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._F7 {
+            width: 74pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._G7 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._H7 {
+            width: 109pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._I7 {
+            width: 104pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+
+        ._J7 {
+            width: 98pt;
+            text-align: center;
+            vertical-align: middle;
+            font-family: 宋体;
+            font-size: 9pt;
+            color: rgb(0, 0, 0);
+            border-left: solid 1px rgb(0, 0, 0);
+            border-right: solid 1px rgb(0, 0, 0);
+            border-top: solid 1px rgb(0, 0, 0);
+            border-bottom: solid 1px rgb(0, 0, 0);
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/base/ureport/res/ureport-asserts/venderjs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/base/ureport/res/ureport-asserts/venderjs/Chart.bundle.min.js"></script>
+    <style type="text/css">/* Chart.js */
+    @-webkit-keyframes chartjs-render-animation {
+        from {
+            opacity: 0.99
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes chartjs-render-animation {
+        from {
+            opacity: 0.99
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    .chartjs-render-monitor {
+        -webkit-animation: chartjs-render-animation 0.001s;
+        animation: chartjs-render-animation 0.001s;
+    }</style>
+    <script type="text/javascript"
+            src="/base/ureport/res/ureport-asserts/venderjs/chartjs-plugin-datalabels.min.js"></script>
+    <script type="text/javascript"
+            src="/base/ureport/res/ureport-asserts/venderjs/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/base/ureport/res/ureport-asserts/js/preview.bundle.js"></script>
+    <style type="text/css">/*!
+ * Datetimepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Improvements by Andrew Rowls
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+    .datetimepicker {
+        padding: 4px;
+        margin-top: 1px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        direction: ltr;
+    }
+
+    .datetimepicker-inline {
+        width: 220px;
+    }
+
+    .datetimepicker.datetimepicker-rtl {
+        direction: rtl;
+    }
+
+    .datetimepicker.datetimepicker-rtl table tr td span {
+        float: right;
+    }
+
+    .datetimepicker-dropdown, .datetimepicker-dropdown-left {
+        top: 0;
+        left: 0;
+    }
+
+    [class*=" datetimepicker-dropdown"]:before {
+        content: '';
+        display: inline-block;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #cccccc;
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+    }
+
+    [class*=" datetimepicker-dropdown"]:after {
+        content: '';
+        display: inline-block;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #ffffff;
+        position: absolute;
+    }
+
+    [class*=" datetimepicker-dropdown-top"]:before {
+        content: '';
+        display: inline-block;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #cccccc;
+        border-top-color: rgba(0, 0, 0, 0.2);
+        border-bottom: 0;
+    }
+
+    [class*=" datetimepicker-dropdown-top"]:after {
+        content: '';
+        display: inline-block;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #ffffff;
+        border-bottom: 0;
+    }
+
+    .datetimepicker-dropdown-bottom-left:before {
+        top: -7px;
+        right: 6px;
+    }
+
+    .datetimepicker-dropdown-bottom-left:after {
+        top: -6px;
+        right: 7px;
+    }
+
+    .datetimepicker-dropdown-bottom-right:before {
+        top: -7px;
+        left: 6px;
+    }
+
+    .datetimepicker-dropdown-bottom-right:after {
+        top: -6px;
+        left: 7px;
+    }
+
+    .datetimepicker-dropdown-top-left:before {
+        bottom: -7px;
+        right: 6px;
+    }
+
+    .datetimepicker-dropdown-top-left:after {
+        bottom: -6px;
+        right: 7px;
+    }
+
+    .datetimepicker-dropdown-top-right:before {
+        bottom: -7px;
+        left: 6px;
+    }
+
+    .datetimepicker-dropdown-top-right:after {
+        bottom: -6px;
+        left: 7px;
+    }
+
+    .datetimepicker > div {
+        display: none;
+    }
+
+    .datetimepicker.minutes div.datetimepicker-minutes {
+        display: block;
+    }
+
+    .datetimepicker.hours div.datetimepicker-hours {
+        display: block;
+    }
+
+    .datetimepicker.days div.datetimepicker-days {
+        display: block;
+    }
+
+    .datetimepicker.months div.datetimepicker-months {
+        display: block;
+    }
+
+    .datetimepicker.years div.datetimepicker-years {
+        display: block;
+    }
+
+    .datetimepicker table {
+        margin: 0;
+    }
+
+    .datetimepicker td,
+    .datetimepicker th {
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: none;
+    }
+
+    .table-striped .datetimepicker table tr td,
+    .table-striped .datetimepicker table tr th {
+        background-color: transparent;
+    }
+
+    .datetimepicker table tr td.minute:hover {
+        background: #eeeeee;
+        cursor: pointer;
+    }
+
+    .datetimepicker table tr td.hour:hover {
+        background: #eeeeee;
+        cursor: pointer;
+    }
+
+    .datetimepicker table tr td.day:hover {
+        background: #eeeeee;
+        cursor: pointer;
+    }
+
+    .datetimepicker table tr td.old,
+    .datetimepicker table tr td.new {
+        color: #999999;
+    }
+
+    .datetimepicker table tr td.disabled,
+    .datetimepicker table tr td.disabled:hover {
+        background: none;
+        color: #999999;
+        cursor: default;
+    }
+
+    .datetimepicker table tr td.today,
+    .datetimepicker table tr td.today:hover,
+    .datetimepicker table tr td.today.disabled,
+    .datetimepicker table tr td.today.disabled:hover {
+        background-color: #fde19a;
+        background-image: -moz-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: -ms-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdd49a), to(#fdf59a));
+        background-image: -webkit-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: -o-linear-gradient(top, #fdd49a, #fdf59a);
+        background-image: linear-gradient(to bottom, #fdd49a, #fdf59a);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdd49a', endColorstr='#fdf59a', GradientType=0);
+        border-color: #fdf59a #fdf59a #fbed50;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    }
+
+    .datetimepicker table tr td.today:hover,
+    .datetimepicker table tr td.today:hover:hover,
+    .datetimepicker table tr td.today.disabled:hover,
+    .datetimepicker table tr td.today.disabled:hover:hover,
+    .datetimepicker table tr td.today:active,
+    .datetimepicker table tr td.today:hover:active,
+    .datetimepicker table tr td.today.disabled:active,
+    .datetimepicker table tr td.today.disabled:hover:active,
+    .datetimepicker table tr td.today.active,
+    .datetimepicker table tr td.today:hover.active,
+    .datetimepicker table tr td.today.disabled.active,
+    .datetimepicker table tr td.today.disabled:hover.active,
+    .datetimepicker table tr td.today.disabled,
+    .datetimepicker table tr td.today:hover.disabled,
+    .datetimepicker table tr td.today.disabled.disabled,
+    .datetimepicker table tr td.today.disabled:hover.disabled,
+    .datetimepicker table tr td.today[disabled],
+    .datetimepicker table tr td.today:hover[disabled],
+    .datetimepicker table tr td.today.disabled[disabled],
+    .datetimepicker table tr td.today.disabled:hover[disabled] {
+        background-color: #fdf59a;
+    }
+
+    .datetimepicker table tr td.today:active,
+    .datetimepicker table tr td.today:hover:active,
+    .datetimepicker table tr td.today.disabled:active,
+    .datetimepicker table tr td.today.disabled:hover:active,
+    .datetimepicker table tr td.today.active,
+    .datetimepicker table tr td.today:hover.active,
+    .datetimepicker table tr td.today.disabled.active,
+    .datetimepicker table tr td.today.disabled:hover.active {
+        background-color: #fbf069;
+    }
+
+    .datetimepicker table tr td.active,
+    .datetimepicker table tr td.active:hover,
+    .datetimepicker table tr td.active.disabled,
+    .datetimepicker table tr td.active.disabled:hover {
+        background-color: #006dcc;
+        background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -ms-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+        background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+        background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+        border-color: #0044cc #0044cc #002a80;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .datetimepicker table tr td.active:hover,
+    .datetimepicker table tr td.active:hover:hover,
+    .datetimepicker table tr td.active.disabled:hover,
+    .datetimepicker table tr td.active.disabled:hover:hover,
+    .datetimepicker table tr td.active:active,
+    .datetimepicker table tr td.active:hover:active,
+    .datetimepicker table tr td.active.disabled:active,
+    .datetimepicker table tr td.active.disabled:hover:active,
+    .datetimepicker table tr td.active.active,
+    .datetimepicker table tr td.active:hover.active,
+    .datetimepicker table tr td.active.disabled.active,
+    .datetimepicker table tr td.active.disabled:hover.active,
+    .datetimepicker table tr td.active.disabled,
+    .datetimepicker table tr td.active:hover.disabled,
+    .datetimepicker table tr td.active.disabled.disabled,
+    .datetimepicker table tr td.active.disabled:hover.disabled,
+    .datetimepicker table tr td.active[disabled],
+    .datetimepicker table tr td.active:hover[disabled],
+    .datetimepicker table tr td.active.disabled[disabled],
+    .datetimepicker table tr td.active.disabled:hover[disabled] {
+        background-color: #0044cc;
+    }
+
+    .datetimepicker table tr td.active:active,
+    .datetimepicker table tr td.active:hover:active,
+    .datetimepicker table tr td.active.disabled:active,
+    .datetimepicker table tr td.active.disabled:hover:active,
+    .datetimepicker table tr td.active.active,
+    .datetimepicker table tr td.active:hover.active,
+    .datetimepicker table tr td.active.disabled.active,
+    .datetimepicker table tr td.active.disabled:hover.active {
+        background-color: #003399;
+    }
+
+    .datetimepicker table tr td span {
+        display: block;
+        width: 23%;
+        height: 54px;
+        line-height: 54px;
+        float: left;
+        margin: 1%;
+        cursor: pointer;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .datetimepicker .datetimepicker-hours span {
+        height: 26px;
+        line-height: 26px;
+    }
+
+    .datetimepicker .datetimepicker-hours table tr td span.hour_am,
+    .datetimepicker .datetimepicker-hours table tr td span.hour_pm {
+        width: 14.6%;
+    }
+
+    .datetimepicker .datetimepicker-hours fieldset legend,
+    .datetimepicker .datetimepicker-minutes fieldset legend {
+        margin-bottom: inherit;
+        line-height: 30px;
+    }
+
+    .datetimepicker .datetimepicker-minutes span {
+        height: 26px;
+        line-height: 26px;
+    }
+
+    .datetimepicker table tr td span:hover {
+        background: #eeeeee;
+    }
+
+    .datetimepicker table tr td span.disabled,
+    .datetimepicker table tr td span.disabled:hover {
+        background: none;
+        color: #999999;
+        cursor: default;
+    }
+
+    .datetimepicker table tr td span.active,
+    .datetimepicker table tr td span.active:hover,
+    .datetimepicker table tr td span.active.disabled,
+    .datetimepicker table tr td span.active.disabled:hover {
+        background-color: #006dcc;
+        background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -ms-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+        background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+        background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+        background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+        border-color: #0044cc #0044cc #002a80;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        color: #ffffff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .datetimepicker table tr td span.active:hover,
+    .datetimepicker table tr td span.active:hover:hover,
+    .datetimepicker table tr td span.active.disabled:hover,
+    .datetimepicker table tr td span.active.disabled:hover:hover,
+    .datetimepicker table tr td span.active:active,
+    .datetimepicker table tr td span.active:hover:active,
+    .datetimepicker table tr td span.active.disabled:active,
+    .datetimepicker table tr td span.active.disabled:hover:active,
+    .datetimepicker table tr td span.active.active,
+    .datetimepicker table tr td span.active:hover.active,
+    .datetimepicker table tr td span.active.disabled.active,
+    .datetimepicker table tr td span.active.disabled:hover.active,
+    .datetimepicker table tr td span.active.disabled,
+    .datetimepicker table tr td span.active:hover.disabled,
+    .datetimepicker table tr td span.active.disabled.disabled,
+    .datetimepicker table tr td span.active.disabled:hover.disabled,
+    .datetimepicker table tr td span.active[disabled],
+    .datetimepicker table tr td span.active:hover[disabled],
+    .datetimepicker table tr td span.active.disabled[disabled],
+    .datetimepicker table tr td span.active.disabled:hover[disabled] {
+        background-color: #0044cc;
+    }
+
+    .datetimepicker table tr td span.active:active,
+    .datetimepicker table tr td span.active:hover:active,
+    .datetimepicker table tr td span.active.disabled:active,
+    .datetimepicker table tr td span.active.disabled:hover:active,
+    .datetimepicker table tr td span.active.active,
+    .datetimepicker table tr td span.active:hover.active,
+    .datetimepicker table tr td span.active.disabled.active,
+    .datetimepicker table tr td span.active.disabled:hover.active {
+        background-color: #003399;
+    }
+
+    .datetimepicker table tr td span.old {
+        color: #999999;
+    }
+
+    .datetimepicker th.switch {
+        width: 145px;
+    }
+
+    .datetimepicker th span.glyphicon {
+        pointer-events: none;
+    }
+
+    .datetimepicker thead tr:first-child th,
+    .datetimepicker tfoot th {
+        cursor: pointer;
+    }
+
+    .datetimepicker thead tr:first-child th:hover,
+    .datetimepicker tfoot th:hover {
+        background: #eeeeee;
+    }
+
+    .input-append.date .add-on i,
+    .input-prepend.date .add-on i,
+    .input-group.date .input-group-addon span {
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+    }
+    </style>
+<body style="margin:5px">
+<form style="margin-top:10px;margin-bottom:10px"></form>
+<div style="border:solid 1px #ddd;border-radius:5px;height:35px;width:100%;margin-bottom:5px;background:#f8f8f8">
+    <!--<div style="text-align:left">
+        <button type="button" class="btn btn-default ureport-export-excel"
+                style="display:inline-block;padding:0;background:#f8f8f8;border:none;margin:3px" title="导出EXCEL"><img
+            src="/base/ureport/res/ureport-asserts/icons/excel.svg" width="20px" height="20px"></button>
+        <button type="button" class="btn btn-default ureport-export-excel-paging"
+                style="display:inline-block;padding:0;background:#f8f8f8;border:none;margin:3px" title="分页导出EXCEL"><img
+            src="/base/ureport/res/ureport-asserts/icons/excel-paging.svg" width="20px" height="20px"></button>
+        <button type="button" class="btn btn-default ureport-export-excel-paging-sheet"
+                style="display:inline-block;padding:0;background:#f8f8f8;border:none;margin:3px"
+                title="分页分Sheet导出EXCEL"><img src="/base/ureport/res/ureport-asserts/icons/excel-with-paging-sheet.svg"
+                                             width="20px" height="20px"></button>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                    style="background:#f8f8f8;border:none;color:#337ab7"> 预览 <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a
+                    href="/base/ureport/preview?_u=mysql:votesstat.ureport.xml&amp;_t=6,7,8,9&amp;_n=票数报表&amp;startTimeAlias=2020-8-1 00:00:00&amp;endTimeAlias=2020-8-31 23:59:59&amp;userId=1&amp;companyId=1&amp;ptype=跟单&amp;currentUserDepartmentId=83,89"
+                    style="color:#337ab7">预览</a></li>
+                <li><a
+                    href="/base/ureport/preview?_u=mysql:votesstat.ureport.xml&amp;_i=1&amp;_t=6,7,8,9&amp;_n=票数报表&amp;startTimeAlias=2020-8-1 00:00:00&amp;endTimeAlias=2020-8-31 23:59:59&amp;userId=1&amp;companyId=1&amp;ptype=跟单&amp;currentUserDepartmentId=83,89"
+                    style="color:#337ab7">分页预览</a></li>
+            </ul>
+        </div>
+    </div>-->
+</div>
+<div id="_ureport_table" style="float:left">
+    <table border="0" style="margin:auto;border-collapse:collapse;width:916pt">
+        <tbody>
+        <tr style="height: 18pt">
+            <td class="_A1">跟单</td>
+            <td class="_B1">&nbsp;</td>
+            <td class="_C1">已生成订单</td>
+            <td class="_D1">已订舱</td>
+            <td class="_E1">已放单</td>
+            <td class="_F1">已开船</td>
+            <td class="_G1">计划出运未开船</td>
+            <td class="_H1">已预计未开船</td>
+            <td class="_I1">回款金额</td>
+            <td class="_J1">未回款金额</td>
+        </tr>
+        <tr style="height: 18pt">
+            <td rowspan="3" class="_A2">杨凤梅</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">22</td>
+            <td class="_D2">19</td>
+            <td class="_E2">17</td>
+            <td class="_F2">0</td>
+            <td class="_G2">19</td>
+            <td class="_H2">19</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">3569.2</td>
+            <td class="_D3">3302.2</td>
+            <td class="_E3">3197.2</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">3302.2</td>
+            <td class="_H3">3302.2</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">3926870.000</td>
+            <td class="_D4">3636680.000</td>
+            <td class="_E4">3479360.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">3636680.000</td>
+            <td class="_H4">3636680.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">田清</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">1</td>
+            <td class="_D2">1</td>
+            <td class="_E2">1</td>
+            <td class="_F2">0</td>
+            <td class="_G2">1</td>
+            <td class="_H2">1</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">70.0</td>
+            <td class="_D3">70.0</td>
+            <td class="_E3">70.0</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">70.0</td>
+            <td class="_H3">70.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">63000.000</td>
+            <td class="_D4">63000.000</td>
+            <td class="_E4">63000.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">63000.000</td>
+            <td class="_H4">63000.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">李佩桐</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">14</td>
+            <td class="_D2">14</td>
+            <td class="_E2">13</td>
+            <td class="_F2">0</td>
+            <td class="_G2">14</td>
+            <td class="_H2">1</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">734.0</td>
+            <td class="_D3">734.0</td>
+            <td class="_E3">646.5</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">734.0</td>
+            <td class="_H3">87.5</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">605510.000</td>
+            <td class="_D4">605510.000</td>
+            <td class="_E4">518885.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">605510.000</td>
+            <td class="_H4">86625.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">魏玮</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">9</td>
+            <td class="_D2">9</td>
+            <td class="_E2">7</td>
+            <td class="_F2">0</td>
+            <td class="_G2">9</td>
+            <td class="_H2">6</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">418.0</td>
+            <td class="_D3">418.0</td>
+            <td class="_E3">325.5</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">418.0</td>
+            <td class="_H3">285.5</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">333395.000</td>
+            <td class="_D4">333395.000</td>
+            <td class="_E4">241120.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">333395.000</td>
+            <td class="_H4">204520.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">张伊</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">5</td>
+            <td class="_D2">5</td>
+            <td class="_E2">5</td>
+            <td class="_F2">0</td>
+            <td class="_G2">5</td>
+            <td class="_H2">4</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">184.0</td>
+            <td class="_D3">184.0</td>
+            <td class="_E3">184.0</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">184.0</td>
+            <td class="_H3">161.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">154100.000</td>
+            <td class="_D4">154100.000</td>
+            <td class="_E4">154100.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">154100.000</td>
+            <td class="_H4">134550.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">白茂荣</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">8</td>
+            <td class="_D2">8</td>
+            <td class="_E2">7</td>
+            <td class="_F2">0</td>
+            <td class="_G2">8</td>
+            <td class="_H2">6</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">1773.0</td>
+            <td class="_D3">1773.0</td>
+            <td class="_E3">1273.0</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">1773.0</td>
+            <td class="_H3">1158.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">1699980.000</td>
+            <td class="_D4">1699980.000</td>
+            <td class="_E4">1209980.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">1699980.000</td>
+            <td class="_H4">1114530.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">王利</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">27</td>
+            <td class="_D2">23</td>
+            <td class="_E2">17</td>
+            <td class="_F2">1</td>
+            <td class="_G2">22</td>
+            <td class="_H2">21</td>
+            <td class="_I2">0</td>
+            <td class="_J2">1</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">3142.4</td>
+            <td class="_D3">2982.4</td>
+            <td class="_E3">1475.2</td>
+            <td class="_F3">276.0</td>
+            <td class="_G3">2706.4</td>
+            <td class="_H3">2686.4</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">276.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">3352498.000</td>
+            <td class="_D4">3187498.000</td>
+            <td class="_E4">1594662.000</td>
+            <td class="_F4">304980.000</td>
+            <td class="_G4">2882518.000</td>
+            <td class="_H4">2865418.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">304980.000</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">周杨杨</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">14</td>
+            <td class="_D2">10</td>
+            <td class="_E2">9</td>
+            <td class="_F2">0</td>
+            <td class="_G2">10</td>
+            <td class="_H2">10</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">801.3</td>
+            <td class="_D3">440.4</td>
+            <td class="_E3">413.4</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">440.4</td>
+            <td class="_H3">440.4</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">806124.000</td>
+            <td class="_D4">456105.000</td>
+            <td class="_E4">430185.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">456105.000</td>
+            <td class="_H4">456105.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">曹雨</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">9</td>
+            <td class="_D2">9</td>
+            <td class="_E2">9</td>
+            <td class="_F2">1</td>
+            <td class="_G2">8</td>
+            <td class="_H2">6</td>
+            <td class="_I2">0</td>
+            <td class="_J2">1</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">252.5</td>
+            <td class="_D3">252.5</td>
+            <td class="_E3">252.5</td>
+            <td class="_F3">92.0</td>
+            <td class="_G3">160.5</td>
+            <td class="_H3">131.25</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">92.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">234102.500</td>
+            <td class="_D4">234102.500</td>
+            <td class="_E4">234102.500</td>
+            <td class="_F4">86480.000</td>
+            <td class="_G4">147622.500</td>
+            <td class="_H4">121331.250</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">86480.000</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">李杰</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">1</td>
+            <td class="_D2">1</td>
+            <td class="_E2">1</td>
+            <td class="_F2">0</td>
+            <td class="_G2">1</td>
+            <td class="_H2">0</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">17.5</td>
+            <td class="_D3">17.5</td>
+            <td class="_E3">17.5</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">17.5</td>
+            <td class="_H3">0.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">16012.500</td>
+            <td class="_D4">16012.500</td>
+            <td class="_E4">16012.500</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">16012.500</td>
+            <td class="_H4">0.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">南宁</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">30</td>
+            <td class="_D2">30</td>
+            <td class="_E2">27</td>
+            <td class="_F2">0</td>
+            <td class="_G2">30</td>
+            <td class="_H2">27</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">1781.0</td>
+            <td class="_D3">1781.0</td>
+            <td class="_E3">1679.0</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">1781.0</td>
+            <td class="_H3">1692.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">1561102.500</td>
+            <td class="_D4">1561102.500</td>
+            <td class="_E4">1476102.500</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">1561102.500</td>
+            <td class="_H4">1492647.500</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">米凤</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">1</td>
+            <td class="_D2">0</td>
+            <td class="_E2">0</td>
+            <td class="_F2">0</td>
+            <td class="_G2">0</td>
+            <td class="_H2">0</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">20.0</td>
+            <td class="_D3">0.0</td>
+            <td class="_E3">0.0</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">0.0</td>
+            <td class="_H3">0.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">41500.000</td>
+            <td class="_D4">0.000</td>
+            <td class="_E4">0.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">0.000</td>
+            <td class="_H4">0.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">杨婷婷</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">8</td>
+            <td class="_D2">7</td>
+            <td class="_E2">7</td>
+            <td class="_F2">6</td>
+            <td class="_G2">1</td>
+            <td class="_H2">1</td>
+            <td class="_I2">0</td>
+            <td class="_J2">6</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">385.5</td>
+            <td class="_D3">253.0</td>
+            <td class="_E3">253.0</td>
+            <td class="_F3">227.0</td>
+            <td class="_G3">26.0</td>
+            <td class="_H3">26.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">227.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">300210.000</td>
+            <td class="_D4">227335.000</td>
+            <td class="_E4">227335.000</td>
+            <td class="_F4">202245.000</td>
+            <td class="_G4">25090.000</td>
+            <td class="_H4">25090.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">202245.000</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">马磊</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">23</td>
+            <td class="_D2">13</td>
+            <td class="_E2">10</td>
+            <td class="_F2">1</td>
+            <td class="_G2">12</td>
+            <td class="_H2">10</td>
+            <td class="_I2">0</td>
+            <td class="_J2">1</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">1555.0</td>
+            <td class="_D3">935.0</td>
+            <td class="_E3">801.0</td>
+            <td class="_F3">105.0</td>
+            <td class="_G3">830.0</td>
+            <td class="_H3">730.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">105.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">1321915.000</td>
+            <td class="_D4">917205.000</td>
+            <td class="_E4">784625.000</td>
+            <td class="_F4">104370.000</td>
+            <td class="_G4">812835.000</td>
+            <td class="_H4">713235.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">104370.000</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">徐梦茹</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">22</td>
+            <td class="_D2">20</td>
+            <td class="_E2">18</td>
+            <td class="_F2">1</td>
+            <td class="_G2">19</td>
+            <td class="_H2">16</td>
+            <td class="_I2">0</td>
+            <td class="_J2">1</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">1212.0</td>
+            <td class="_D3">1037.0</td>
+            <td class="_E3">852.0</td>
+            <td class="_F3">27.0</td>
+            <td class="_G3">1010.0</td>
+            <td class="_H3">711.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">27.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">1007909.635</td>
+            <td class="_D4">850847.135</td>
+            <td class="_E4">681797.135</td>
+            <td class="_F4">27810.000</td>
+            <td class="_G4">823037.135</td>
+            <td class="_H4">545557.135</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">27810.000</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">毛颖华</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">15</td>
+            <td class="_D2">13</td>
+            <td class="_E2">11</td>
+            <td class="_F2">1</td>
+            <td class="_G2">12</td>
+            <td class="_H2">3</td>
+            <td class="_I2">0</td>
+            <td class="_J2">1</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">1285.5</td>
+            <td class="_D3">1213.5</td>
+            <td class="_E3">920.0</td>
+            <td class="_F3">17.0</td>
+            <td class="_G3">1196.5</td>
+            <td class="_H3">289.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">17.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">903215.000</td>
+            <td class="_D4">837715.000</td>
+            <td class="_E4">632690.000</td>
+            <td class="_F4">8500.000</td>
+            <td class="_G4">829215.000</td>
+            <td class="_H4">148240.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">8500.000</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">王瑞</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">4</td>
+            <td class="_D2">3</td>
+            <td class="_E2">2</td>
+            <td class="_F2">0</td>
+            <td class="_G2">3</td>
+            <td class="_H2">3</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">84.2</td>
+            <td class="_D3">66.7</td>
+            <td class="_E3">42.7</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">66.7</td>
+            <td class="_H3">66.7</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">85728.000</td>
+            <td class="_D4">67878.000</td>
+            <td class="_E4">42798.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">67878.000</td>
+            <td class="_H4">67878.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">张璐</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">0</td>
+            <td class="_D2">0</td>
+            <td class="_E2">0</td>
+            <td class="_F2">0</td>
+            <td class="_G2">0</td>
+            <td class="_H2">0</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">0.0</td>
+            <td class="_D3">0.0</td>
+            <td class="_E3">0.0</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">0.0</td>
+            <td class="_H3">0.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">0.000</td>
+            <td class="_D4">0.000</td>
+            <td class="_E4">0.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">0.000</td>
+            <td class="_H4">0.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">张丹</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">0</td>
+            <td class="_D2">0</td>
+            <td class="_E2">0</td>
+            <td class="_F2">0</td>
+            <td class="_G2">0</td>
+            <td class="_H2">0</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">0.0</td>
+            <td class="_D3">0.0</td>
+            <td class="_E3">0.0</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">0.0</td>
+            <td class="_H3">0.0</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">0.000</td>
+            <td class="_D4">0.000</td>
+            <td class="_E4">0.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">0.000</td>
+            <td class="_H4">0.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td rowspan="3" class="_A2">马佳婷</td>
+            <td class="_B2">票数</td>
+            <td class="_C2">2</td>
+            <td class="_D2">2</td>
+            <td class="_E2">2</td>
+            <td class="_F2">0</td>
+            <td class="_G2">2</td>
+            <td class="_H2">2</td>
+            <td class="_I2">0</td>
+            <td class="_J2">&nbsp;</td>
+        </tr>
+        <tr style="height:18pt">
+            <td class="_B3">数量(单位:吨)</td>
+            <td class="_C3">152.5</td>
+            <td class="_D3">152.5</td>
+            <td class="_E3">152.5</td>
+            <td class="_F3">0.0</td>
+            <td class="_G3">152.5</td>
+            <td class="_H3">152.5</td>
+            <td class="_I3">0.0</td>
+            <td class="_J3">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B4">收入</td>
+            <td class="_C4">148875.000</td>
+            <td class="_D4">148875.000</td>
+            <td class="_E4">148875.000</td>
+            <td class="_F4">0.000</td>
+            <td class="_G4">148875.000</td>
+            <td class="_H4">148875.000</td>
+            <td class="_I4">0.0</td>
+            <td class="_J4">&nbsp;</td>
+        </tr>
+        <tr style="height:19pt">
+            <td rowspan="3" class="_A5">总计</td>
+            <td class="_B5">票数总计</td>
+            <td class="_C5">215.0</td>
+            <td class="_D5">187.0</td>
+            <td class="_E5">163.0</td>
+            <td class="_F5">11.0</td>
+            <td class="_G5">176.0</td>
+            <td class="_H5">136.0</td>
+            <td class="_I5">0.0</td>
+            <td class="_J5">11.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B6">数量总计(单位:吨)</td>
+            <td class="_C6">17437.6</td>
+            <td class="_D6">15612.7</td>
+            <td class="_E6">12555.0</td>
+            <td class="_F6">744.0</td>
+            <td class="_G6">14868.7</td>
+            <td class="_H6">11989.45</td>
+            <td class="_I6">0.0</td>
+            <td class="_J6">744.0</td>
+        </tr>
+        <tr style="height:19pt">
+            <td class="_B7">收入总计</td>
+            <td class="_C7">16562047.135</td>
+            <td class="_D7">14997340.635</td>
+            <td class="_E7">11935629.635</td>
+            <td class="_F7">734385.000</td>
+            <td class="_G7">14262955.635</td>
+            <td class="_H7">11824281.885</td>
+            <td class="_I7">0.000</td>
+            <td class="_J7">734385.000</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<iframe name="_print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+<iframe name="_print_pdf_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+<script type="text/javascript">
+window._server = '/base/ureport';
+window.formElements = [];
+$(document).ready(function () {})
+
+</script>
+<script type="text/javascript">
+function onIframeLoad() {
+    let iframeDoc = document;
+    let head = iframeDoc.getElementsByTagName('head')[0];
+    let body = iframeDoc.getElementsByTagName('body')[0];
+    let styleElement = iframeDoc.createElement('style');
+    styleElement.appendChild(iframeDoc.createTextNode(`
+                ::-webkit-scrollbar {
+                    display: none;
+                }
+                #_ureport_table {
+                    position: relative;
+                    top: 25px;
+                }
+                #fixedDiv {
+                    position: fixed;
+                    top: 53px;
+                    left: 5px;
+                    overflow: hidden;
+                    z-index: 100;
+                    background-color: #ffffff;
+                }
+                #fixedTable {
+                    margin: auto;
+                    border-collapse: collapse;
+                    table-layout : fixed;
+                }
+                #topDiv {
+                    position: absolute;
+                    top: -24px;
+                    left: 0;
+                    overflow: hidden;
+                    z-index: 10;
+                }
+                #topTable {
+                    margin: auto;
+                    border-collapse: collapse;
+                    table-layout : fixed;
+                }
+                #leftDiv {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 700px;
+                    overflow: hidden;
+                    overflow-x: hidden;
+                    z-index: 1;
+                }
+                #leftTable {
+                    margin: auto;
+                    border-collapse: collapse;
+                    table-layout : fixed;
+                }
+                #mainDiv {
+                    height: 700px;
+                    overflow: auto;
+                    overflow-x: hidden;
+                    z-index: -10;
+                }
+                #fixedBlock {
+                    position: fixed;
+                    top: 53px;
+                    left: 0;
+                    z-index: 99;
+                    background: #ffffff;
+                }
+                #topBlock {
+                    position: fixed;
+                    height: 76px;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 2;
+                    background: #ffffff;
+                }
+                #leftBlock {
+                    position: fixed;
+                    height: 100%;
+                    width: 254px;
+                    top: 52px;
+                    left: 0;
+                    z-index: 0;
+                    background: #ffffff;
+                }
+                #toolbar {
+                    position: relative;
+                    z-index: 100;
+                }
+            `));
+    head.appendChild(styleElement);
+
+    let warpDivEle = iframeDoc.getElementById('_ureport_table');
+    $('body > div:first').attr('id', 'toolbar');
+
+    let topBlock = iframeDoc.createElement('div');
+    topBlock.id = 'topBlock';
+    body.appendChild(topBlock);
+    let leftBlock = iframeDoc.createElement('div');
+    leftBlock.id = 'leftBlock';
+    body.appendChild(leftBlock);
+    let fixedBlock = iframeDoc.createElement('div');
+    fixedBlock.id = 'fixedBlock';
+    body.appendChild(fixedBlock);
+
+    let mainTable = warpDivEle.getElementsByTagName('table')[0];
+
+    let headTrELe = mainTable.getElementsByTagName('tr')[0].outerHTML + mainTable.getElementsByTagName('tr')[1].outerHTML;
+
+    let leftTrELe = '';
+    let fixedELe = '';
+    $('#_ureport_table table:eq(0) tr').each(function (index, element) {
+        if (index === 0) {
+            fixedELe += $(element).prop('outerHTML');
+            $(element).css('display', 'none');
+        } else {
+            leftTrELe += $(element).prop('outerHTML');
+        }
+    });
+
+    warpDivEle.innerHTML = '<div id="fixedDiv"><table id="fixedTable" border="0">' + fixedELe + '</table></div><div id="leftDiv"><table id="leftTable" border="0">' + leftTrELe + '</table></div><div id="topDiv"><table id="topTable" border="0">' + headTrELe + '</table></div><div id="mainDiv">' + mainTable.outerHTML + '</div>';
+
+    $('#fixedTable td').filter(function () {
+        if ((/\_[C-Z]/).test($(this).attr('class'))) {
+            $(this).remove();
+        }
+    });
+
+    $('#leftTable td').filter(function () {
+        if ((/\_[C-Z]/).test($(this).attr('class'))) {
+            $(this).remove();
+        }
+    });
+
+    let trs = $('#topTable tr');
+
+    for (let j = 1; j < trs.length; j++) {
+        $('#topTable tr:eq(' + j + ')').css('display', 'none');
+    }
+
+    for (let i = 0; i < $('#mainDiv tr:eq(2)').children().length; i++) {
+        let width = $('#mainDiv tr:eq(1) td:eq(' + i + ')').width() + 2;
+        if (i < 2) {
+            $('#fixedTable tr:first td:eq(' + i + ')').css('width', width - 2 - i + 'px');
+            $('#topTable tr:first td:eq(' + i + ')').css('width', width + 'px');
+            if (i === 0) {
+                $('#leftTable td').each(function (leftIndex, leftElement) {
+                    if ((/_A/).test($(leftElement).attr('class'))) {
+                        $(leftElement).css('width', width + 'px');
+                    }
+                });
+            } else if (i === 1) {
+                $('#leftTable td').each(function (leftIndex, leftElement) {
+                    if ((/_B/).test($(leftElement).attr('class'))) {
+                        $(leftElement).css('width', width + 'px');
+                    }
+                });
+            }
+        } else {
+            $('#topTable tr:eq(1) td:eq(' + (i - 2) + ')').css('width', width + 'px');
+        }
+    }
+
+    $('#leftDiv').css('left', $(document).scrollLeft()).height($(window).height() - 110);
+    $('#mainDiv').height($(window).height() - 110);
+    $('#fixedBlock').width($('#fixedDiv').width()).height($('#fixedDiv').height());
+
+    $(document).scroll(function (e) {
+        $('#leftDiv').css('left', $(this).scrollLeft());
+    });
+
+    $('#mainDiv').scroll(function (e) {
+        $('#leftDiv').height($(window).height() - 110 + $(this).scrollTop());
+        $('#leftDiv').css('top', -$(this).scrollTop());
+    });
+}
+$(document).ready(function () {
+    onIframeLoad();
+});
+
+</script>
+</body>
+</html>
